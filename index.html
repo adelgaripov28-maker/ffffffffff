@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FES X AMIRKA</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .tab {
+            background: white;
+            color: black;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>FES X AMIRKA</h1>
+        
+        <div class="tab" onclick="showTab('giveaways')">🎁 Розыгрыши</div>
+        <div class="tab" onclick="showTab('shop')">🛍️ FESshop</div>
+        <div class="tab" onclick="showTab('fabius')">🤖 FabiusGPT</div>
+        
+        <div id="giveaways" class="content">
+            <h3>Активные розыгрыши</h3>
+            <p>Розыгрыш 100 звезд</p>
+            <button onclick="participate()">Участвовать</button>
+        </div>
+        
+        <div id="shop" class="content" style="display:none">
+            <h3>Магазин</h3>
+            <p>VIP статус - 100 звезд</p>
+            <p>Игровая валюта - 50 звезд</p>
+        </div>
+        
+        <div id="fabius" class="content" style="display:none">
+            <h3>FabiusGPT</h3>
+            <p>В разработке...</p>
+            <p>Разработчик: FESAK</p>
+        </div>
+    </div>
+
+    <script>
+        function showTab(tabName) {
+            document.querySelectorAll('.content').forEach(tab => {
+                tab.style.display = 'none';
+            });
+            document.getElementById(tabName).style.display = 'block';
+        }
+        
+        function participate() {
+            alert('Вы участвуете в розыгрыше!');
+        }
+        
+        // Показываем первую вкладку
+        showTab('giveaways');
+    </script>
+</body>
+</html>
